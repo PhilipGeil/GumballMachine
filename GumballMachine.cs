@@ -6,13 +6,27 @@ using System.Threading.Tasks;
 
 namespace GumballMachine
 {
-    class GumballMachine
+    public class GumballMachine
     {
+        static GumballMachine instance;
         StorageBowl storageBowl = new StorageBowl();
         Handle handle = new Handle();
         OutputDrawer outputDrawer = new OutputDrawer();
 
-        public GumballMachine() { }
+        GumballMachine() { }
+
+        public static GumballMachine Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new GumballMachine();
+                }
+                return instance;
+            }
+        }
+
         /// <summary>
         /// Returns the amount of gum left in the machine
         /// </summary>

@@ -11,13 +11,18 @@ namespace GumballMachine
         List<Gum> nextGumBatch = new List<Gum>();
         
         public SubscriptionManager() { }
-
+        /// <summary>
+        /// Delivers the new batch of gums to the user
+        /// </summary>
+        /// <returns>List of Gum with the correct amount of each flavour</returns>
         public List<Gum> DeliverGums()
         {
             GetNextBatchReady();
             return nextGumBatch;
         }
-
+        /// <summary>
+        /// Create the new batch, with the correct amount
+        /// </summary>
         void GetNextBatchReady()
         {
             nextGumBatch.Clear();

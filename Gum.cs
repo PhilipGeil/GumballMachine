@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GumballMachine
 {
-    class Gum
+    public class Gum
     {
         public string Flavour { get; set; }
 

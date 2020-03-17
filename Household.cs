@@ -9,7 +9,7 @@ namespace GumballMachine
     class Household
     {
         public string Address { get; set; }
-        public GumballMachine gumballMachine = new GumballMachine();
+        public GumballMachine gumballMachine = GumballMachine.Instance;
         public List<Gum> spareGums = new List<Gum>();
         public SubscriptionManager subscriptionManager = new SubscriptionManager();
 
