@@ -15,6 +15,8 @@ namespace GumballMachine
         /// return the list with the remaining gums
         /// </summary>
         /// <returns></returns>
+        
+        //Forkert navngivning - burde bare hedde GetGums
         public List<Gum> GetNumberOfGums()
         {
             return gums;
