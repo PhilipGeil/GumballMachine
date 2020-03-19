@@ -13,6 +13,7 @@ namespace GumballMachine
         Handle handle = new Handle();
         OutputDrawer outputDrawer = new OutputDrawer();
 
+        //Denne konstruktør skal markeres som private. Lige nu er den default og det betyder at alle klasser i samme nameskapce kan kalde new GumballMachine
         GumballMachine() { }
 
         public static GumballMachine Instance
@@ -39,6 +40,8 @@ namespace GumballMachine
         /// Retrievs the list of gums, used for showing the specific remainings
         /// </summary>
         /// <returns></returns>
+        
+        //GetGums ville være en bedre navngivning
         public List<Gum> GetListOfGums()
         {
             return storageBowl.GetNumberOfGums();
@@ -48,6 +51,10 @@ namespace GumballMachine
         /// </summary>
         /// <param name="fillGums"></param>
         /// <returns>String which indicates the status of the filling</returns>
+        
+        //Her kunne man have kastet en exception, det ville være pænere end en streng
+        //eks. MachineFullException
+        
         public string FillMachine(List<Gum> fillGums)
         {
             if (storageBowl.GetNumberOfGums().Count == 55)
@@ -140,6 +147,8 @@ namespace GumballMachine
         /// <summary>
         /// Retrieves the gum from the storageBowl and "puts" it in the output drawer
         /// </summary>
+        
+      //Denne metode burde være private, alle kan jo kalde den... og jeg troede at det var den jeg skulle bruge for at få et tyggegummi... så der er noget med navngivningen her
         public void GetGum()
         {
             if (handle.ActivateGetGum())
